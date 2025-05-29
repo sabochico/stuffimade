@@ -80,6 +80,33 @@
         justify-content: center;
       }
     }
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .project-card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #0ff;
+    }
+    .project-card h3 {
+      color: #0ff;
+      margin-bottom: 10px;
+    }
+    .project-card p {
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
@@ -99,7 +126,20 @@
 
   <section id="coding" style="padding: 100px 20px; text-align: center;">
     <h2>Coding & Digital Projects</h2>
-    <p>[Showcase your sites, tools, or creative builds here]</p>
+    <div class="projects">
+      <div class="project-card" onclick="window.open('https://sabochico.github.io/', '_blank')">
+        <h3>SABOCHICO</h3>
+        <p>Japanese fashion storefront site built with GitHub Pages and HTML/CSS.</p>
+      </div>
+      <div class="project-card" onclick="window.open('https://example.com', '_blank')">
+        <h3>Cool Web App</h3>
+        <p>Experimental tool using JavaScript and open APIs. Dark mode UI with live data.</p>
+      </div>
+      <div class="project-card" onclick="window.open('https://example.com', '_blank')">
+        <h3>Coming Soon</h3>
+        <p>Placeholder for future digital creations and weird experiments.</p>
+      </div>
+    </div>
   </section>
 
   <section id="social" style="padding: 100px 20px; text-align: center;">
