@@ -160,9 +160,46 @@
   
 
   
-<audio autoplay loop>
+
+<div id="music-toggle" style="position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background: #0ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px #0ff; cursor: pointer; animation: pulse 2s infinite ease-in-out; z-index: 1000; display: none;">
+  <span style="font-size: 24px; color: #000;">🎵</span>
+</div>
+
+<audio id="bg-music" loop>
   <source src="https://dl.dropboxusercontent.com/s/85kphdzsqvl0kha/MyChemicalRomance-Cancer.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('music-toggle');
+    const audio = document.getElementById('bg-music');
+    let playing = false;
+
+    setTimeout(() => {
+      button.style.display = 'flex';
+    }, 2000);
+
+    button.addEventListener('click', () => {
+      if (!playing) {
+        audio.volume = 0;
+        audio.play();
+        playing = true;
+        let v = 0;
+        const fade = setInterval(() => {
+          v += 0.05;
+          if (v >= 1) {
+            v = 1;
+            clearInterval(fade);
+          }
+          audio.volume = v;
+        }, 100);
+      } else {
+        audio.pause();
+        playing = false;
+      }
+    });
+  });
+</script>
 </body>
 </html>
