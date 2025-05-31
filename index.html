@@ -84,6 +84,45 @@
       margin-top: 40px;
       max-width: 500px;
     }
+    .card-section {
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .section-title {
+      font-size: 2em;
+      color: #0ff;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #0ff;
+    }
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    .card {
+      background: #1a1a1a;
+      border: 2px solid #0ff;
+      padding: 20px;
+      width: 260px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #0ff3;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #0ff;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0ff;
+    }
+    .card p {
+      color: #ccc;
+      font-size: 0.95em;
+    }
   </style>
 </head>
 <body>
@@ -110,35 +149,40 @@
     </div>
   </header>
 
-  <!-- Game section hidden for now -->
-  <!--
-  <div id="game-container" style="position: relative; width: 100%; height: 200px; margin-top: 80px; background: #111; overflow: hidden; border-top: 2px solid #0ff; border-bottom: 2px solid #0ff;">
-    <img id="chico" src="https://i.imgur.com/jcZDeOd.gif" alt="Chico" style="position: absolute; left: 0; bottom: 20px; width: 60px; transition: left 0.1s; image-rendering: pixelated;">
-    <img id="chimmi" src="https://i.imgur.com/YFrgOMZ.png" alt="Chimmi" style="position: absolute; right: 40px; bottom: 20px; width: 60px; image-rendering: pixelated;">
-  </div>
+  <div class="divider"></div>
 
-  <script>
-    const chico = document.getElementById('chico');
-    const chimmi = document.getElementById('chimmi');
-    let position = 0;
-    const moveSpeed = 10;
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') {
-        position += moveSpeed;
-        chico.style.left = position + 'px';
-        const chicoRight = chico.getBoundingClientRect().right;
-        const chimmiLeft = chimmi.getBoundingClientRect().left;
-        if (chicoRight >= chimmiLeft) {
-          alert('💋 Chico kissed Chimmi!');
-        }
-      }
-      if (e.key === 'ArrowLeft' && position > 0) {
-        position -= moveSpeed;
-        chico.style.left = position + 'px';
-      }
-    });
-  </script>
-  -->
+  <section class="card-section">
+    <div class="section-title">Creative Projects</div>
+    <div class="card-grid">
+      <div class="card">
+        <h3>BeautyMarket JP</h3>
+        <p>A minimalist pink & white app for second-hand beauty sales in Japan.</p>
+      </div>
+      <div class="card">
+        <h3>Cold Brew Empire</h3>
+        <p>Branding + landing page concept for a boutique Tokyo cold brew label.</p>
+      </div>
+      <div class="card">
+        <h3>Pixel Dog Game</h3>
+        <p>Mini pixel game where your dog walks across the screen to kiss the other. Made for fun.</p>
+      </div>
+      <div class="card">
+        <h3>OnlyFans Talent Manager</h3>
+        <p>Business concept for helping JAV actresses run international fan platforms.</p>
+      </div>
+      <div class="card">
+        <h3>Meme Kit + Scripts</h3>
+        <p>Funny Japanese memes, phrase videos, Tinder bios, and fake analytics — the Jiyay toolkit.</p>
+      </div>
+      <div class="card">
+        <h3>Top TikToks</h3>
+        <p>My most viral posts, with captions, reach stats, and why they worked.</p>
+      </div>
+      <div class="card">
+        <h3>What's My Fursona?</h3>
+        <p>A lo-fi web toy that reveals your spirit animal with neon pixel energy. Click to find out.</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
