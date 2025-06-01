@@ -117,6 +117,29 @@
       align-items: center;
       text-align: center;
     }
+    .furry-button {
+      margin-top: 30px;
+      padding: 18px 32px;
+      font-size: 1.1em;
+      background: #ff00ff;
+      border: none;
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #ff00ff88;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .furry-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #ff00ffaa;
+    }
+    .furry-result {
+      margin-top: 30px;
+      font-size: 2em;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+      animation: pulse 2s infinite ease-in-out;
+    }
   </style>
 </head>
 <body>
@@ -149,7 +172,8 @@
   </header>
   <section id="projects">
     <h2 class="glow">Projects</h2>
-    <p>Coming soon: all the websites, games, and weird experiments I've built.</p>
+    <button class="furry-button" onclick="revealFurryResult()">Am I a Furry?</button>
+    <div id="furry-result" class="furry-result" style="display: none;">YES, YOU'RE A FURRY!</div>
   </section>
   <div class="divider"></div>
   <section id="social">
@@ -161,5 +185,11 @@
     <h2 class="glow">Music</h2>
     <p>I make weird beats, sad vibes, and catchy loops. Will add previews soon.</p>
   </section>
+  <script>
+    function revealFurryResult() {
+      const result = document.getElementById('furry-result');
+      result.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
