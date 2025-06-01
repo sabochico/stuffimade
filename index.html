@@ -75,6 +75,44 @@
       margin-top: 40px;
       max-width: 500px;
     }
+    .socials {
+      margin-top: 120px;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      z-index: 5;
+    }
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 80px 20px;
+      gap: 40px;
+    }
+    .project-card {
+      background: #1a1a1a;
+      border: 2px solid #0ff6;
+      border-radius: 12px;
+      padding: 24px;
+      width: 300px;
+      box-shadow: 0 0 12px #0ff6;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #0ffb;
+    }
+    .project-card h3 {
+      color: #0ff;
+      font-size: 1.5em;
+      margin-bottom: 12px;
+    }
+    .project-card p {
+      color: #ccc;
+      font-size: 0.95em;
+    }
   </style>
 </head>
 <body>
@@ -85,7 +123,7 @@
       <div class="bottom glow">JAY</div>
     </div>
     <p style="color: #0ff; font-size: 1.2em; text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; animation: pulse 2s infinite ease-in-out;">I like to make things.</p>
-    <div style="margin-top: 120px; display: flex; gap: 30px; justify-content: center; align-items: center; z-index: 5;">
+    <div class="socials">
       <a href="https://instagram.com/yourusername" target="_blank" title="Instagram">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 36px; height: 36px; filter: drop-shadow(0 0 5px #0ff);">
       </a>
@@ -101,5 +139,31 @@
     </div>
   </header>
   <div class="divider"></div>
+  <section class="project-grid">
+    <div class="project-card">
+      <h3>BeautyMarket JP</h3>
+      <p>A second-hand beauty product marketplace app for women in Japan. Minimal UI + Japanese language toggle.</p>
+    </div>
+    <div class="project-card">
+      <h3>Cold Brew Empire</h3>
+      <p>Lo-fi cyberpunk-themed cold brew brand made in China, labeled and shipped globally. (WIP)</p>
+    </div>
+    <div class="project-card">
+      <h3>Pixel Dog Game</h3>
+      <p>A Chico & Chimmi mini pixel side scroller. You play as Chico to kiss Chimmi.</p>
+    </div>
+    <div class="project-card">
+      <h3>OnlyFans Talent Manager</h3>
+      <p>Business system for managing content, fans, and international exposure for JAV models.</p>
+    </div>
+    <div class="project-card">
+      <h3>Meme Kit</h3>
+      <p>Weird meme experiments, Japanese wordplay, cultural jokes. Viral hits included.</p>
+    </div>
+    <div class="project-card">
+      <h3>Top TikToks</h3>
+      <p>My top performing videos, analytics, and breakdowns of why they hit. Screenshots + insights included.</p>
+    </div>
+  </section>
 </body>
 </html>
