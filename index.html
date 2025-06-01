@@ -133,18 +133,26 @@
       transform: scale(1.05);
       box-shadow: 0 0 25px #ff00ffaa;
     }
-    .furry-result {
+    .furry-container {
+      position: relative;
+      display: none;
       margin-top: 30px;
+    }
+    .furry-container img {
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #ff00ffaa;
+    }
+    .furry-result-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       font-size: 2em;
       color: #ff00ff;
       text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
       animation: pulse 2s infinite ease-in-out;
-    }
-    .furry-gif {
-      margin-top: 30px;
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 0 30px #ff00ffaa;
+      opacity: 0;
     }
   </style>
 </head>
@@ -179,10 +187,9 @@
   <section id="projects">
     <h2 class="glow">Projects</h2>
     <button class="furry-button" onclick="revealFurryResult()">Am I a Furry?</button>
-    <div id="furry-result" class="furry-result" style="display: none;">
-      YES, YOU'RE A FURRY!
-      <br />
-      <img class="furry-gif" src="https://github.com/sabochico/stuffimade/blob/main/dfnamk0-b0c56fb7-f68d-4b9d-b6c1-3c05ce37ba7a.gif?raw=true" alt="Furry GIF">
+    <div id="furry-container" class="furry-container">
+      <img src="https://github.com/sabochico/stuffimade/blob/main/dfnamk0-b0c56fb7-f68d-4b9d-b6c1-3c05ce37ba7a.gif?raw=true" alt="Furry GIF">
+      <div id="furry-text" class="furry-result-text">YES, YOU'RE A FURRY!</div>
     </div>
   </section>
   <div class="divider"></div>
@@ -197,8 +204,12 @@
   </section>
   <script>
     function revealFurryResult() {
-      const result = document.getElementById('furry-result');
-      result.style.display = 'block';
+      const container = document.getElementById('furry-container');
+      const text = document.getElementById('furry-text');
+      container.style.display = 'block';
+      setTimeout(() => {
+        text.style.opacity = '1';
+      }, 3000);
     }
   </script>
 </body>
