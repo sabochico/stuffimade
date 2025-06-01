@@ -83,46 +83,6 @@
       align-items: center;
       z-index: 5;
     }
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      gap: 40px;
-      padding: 60px;
-      scroll-snap-type: x mandatory;
-    }
-    .carousel::-webkit-scrollbar {
-      display: none;
-    }
-    .carousel-item {
-      min-width: 280px;
-      scroll-snap-align: center;
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 15px #0ff8;
-      border: 2px solid #0ff6;
-    }
-    .carousel-item img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-    }
-    .carousel-item .label {
-      position: absolute;
-      bottom: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: auto;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 4px 8px;
-      border-radius: 6px;
-      color: #0ff;
-      font-weight: bold;
-      text-align: center;
-      font-size: 0.9em;
-      box-shadow: 0 0 10px #0ff8;
-    }
   </style>
 </head>
 <body>
@@ -149,19 +109,5 @@
     </div>
   </header>
   <div class="divider"></div>
-  <section class="carousel">
-    <div class="carousel-item">
-      <img src="https://github.com/sabochico/stuffimade/blob/main/download.jpeg?raw=true" alt="Social Media">
-      <div class="label">Social Media</div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://github.com/sabochico/stuffimade/blob/main/download%20(1).jpeg?raw=true" alt="Projects">
-      <div class="label">Projects</div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://github.com/sabochico/stuffimade/blob/main/images.jpeg?raw=true" alt="Memes">
-      <div class="label">Memes</div>
-    </div>
-  </section>
 </body>
 </html>
