@@ -75,37 +75,6 @@
       margin-top: 40px;
       max-width: 500px;
     }
-    .dice-game {
-      text-align: center;
-      padding: 80px 20px;
-      font-size: 1.5em;
-    }
-    .dice-button {
-      background: #0ff;
-      border: none;
-      color: #000;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 0 15px #0ff;
-      transition: transform 0.2s;
-    }
-    .dice-button:hover {
-      transform: scale(1.1);
-    }
-    .dice-result {
-      margin-top: 30px;
-      font-size: 1.8em;
-      color: #0ff;
-      text-shadow: 0 0 10px #0ff;
-    }
-    .furry-gif {
-      margin-top: 20px;
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px #0ff;
-    }
   </style>
 </head>
 <body>
@@ -131,21 +100,6 @@
       </a>
     </div>
   </header>
-
   <div class="divider"></div>
-
-  <section class="dice-game">
-    <div>Are you a furry?</div>
-    <button class="dice-button" onclick="rollDice()">Roll the Dice</button>
-    <div class="dice-result" id="diceResult"></div>
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3E0a3dhOHNnMGxvb3FpZDV4a3E4YjFoemY0N3oycGp0d3M1aHkzeiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qnGYRkYS8qz4C/giphy.gif" id="furryGif" class="furry-gif" style="display:none;">
-  </section>
-
-  <script>
-    function rollDice() {
-      document.getElementById('diceResult').innerText = '🎲 YES';
-      document.getElementById('furryGif').style.display = 'block';
-    }
-  </script>
 </body>
 </html>
