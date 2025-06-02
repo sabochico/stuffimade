@@ -138,6 +138,25 @@
       color: #fff;
       transform: scale(1.05);
     }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border: 2px solid #0ff;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px #0ff5;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #0ff;
+    }
   </style>
 </head>
 <body>
@@ -174,6 +193,7 @@
       <h3>Design</h3>
       <div class="project-links">
         <a href="projects/pixel-art-gallery.html">Pixel Art Gallery</a>
+        <a href="projects/magazine-covers.html">Fake Japanese Magazine Covers</a>
       </div>
     </div>
     <div class="project-category">
