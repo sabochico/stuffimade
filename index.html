@@ -117,42 +117,18 @@
       align-items: center;
       text-align: center;
     }
-    .furry-button {
-      margin-top: 30px;
-      padding: 18px 32px;
-      font-size: 1.1em;
-      background: #ff00ff;
-      border: none;
+    .project-links a {
+      color: #0ff;
+      font-size: 1.5em;
+      margin: 15px 0;
+      display: block;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+    .project-links a:hover {
       color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #ff00ff88;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .furry-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px #ff00ffaa;
-    }
-    .furry-container {
-      position: relative;
-      display: none;
-      margin-top: 30px;
-    }
-    .furry-container img {
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 0 30px #ff00ffaa;
-    }
-    .furry-result-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 2em;
-      color: #ff00ff;
-      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-      animation: pulse 2s infinite ease-in-out;
-      opacity: 0;
     }
   </style>
 </head>
@@ -186,10 +162,10 @@
   </header>
   <section id="projects">
     <h2 class="glow">Projects</h2>
-    <button class="furry-button" onclick="revealFurryResult()">Am I a Furry?</button>
-    <div id="furry-container" class="furry-container">
-      <img src="https://github.com/sabochico/stuffimade/blob/main/dfnamk0-b0c56fb7-f68d-4b9d-b6c1-3c05ce37ba7a.gif?raw=true" alt="Furry GIF">
-      <div id="furry-text" class="furry-result-text">YES, YOU'RE A FURRY!</div>
+    <div class="project-links">
+      <a href="projects/am-i-furry.html">Am I a Furry?</a>
+      <a href="projects/pixel-dog-game.html">Pixel Dog Game</a>
+      <a href="projects/coldbrew-brand.html">Cold Brew Brand Site</a>
     </div>
   </section>
   <div class="divider"></div>
@@ -202,15 +178,5 @@
     <h2 class="glow">Music</h2>
     <p>I make weird beats, sad vibes, and catchy loops. Will add previews soon.</p>
   </section>
-  <script>
-    function revealFurryResult() {
-      const container = document.getElementById('furry-container');
-      const text = document.getElementById('furry-text');
-      container.style.display = 'block';
-      setTimeout(() => {
-        text.style.opacity = '1';
-      }, 3000);
-    }
-  </script>
 </body>
 </html>
