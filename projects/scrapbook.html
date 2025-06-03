@@ -2,113 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Creative Scrapbook</title>
+  <title>Design Gallery</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
       padding: 0;
-    }
-    body {
-      background: #0f0f0f;
       font-family: 'Orbitron', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .book {
-      position: relative;
-      width: 90%;
-      max-width: 800px;
-      height: 500px;
-      perspective: 2000px;
-    }
-    .page {
-      width: 100%;
-      height: 100%;
-      background: #1a1a1a;
+      background-color: #0f0f0f;
       color: #fff;
-      position: absolute;
-      border: 2px solid #0ff;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #0ff4;
-      transition: transform 1s;
-      transform-origin: left;
-      padding: 40px;
-      overflow: auto;
-    }
-    .page img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .page h2 {
-      color: #0ff;
-      margin-bottom: 10px;
-    }
-    .controls {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
       display: flex;
-      justify-content: space-between;
-      padding: 0 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
-    button {
-      padding: 10px 20px;
-      background: #0ff;
-      border: none;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
+    h1 {
+      margin: 40px 0;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff7;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      width: 90%;
+      max-width: 1200px;
+    }
+    .gallery-item {
+      border: 2px solid #0ff;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #1a1a1a;
       box-shadow: 0 0 10px #0ff7;
+      transition: transform 0.3s;
     }
-    button:hover {
-      background: #00f5ff;
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .caption {
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      color: #0ff;
     }
   </style>
 </head>
 <body>
-  <div class="book">
-    <div class="page" id="page1" style="z-index: 3;">
-      <h2>✨ Welcome</h2>
-      <p>This is your creative scrapbook. Each page flips to something you made or love. Let's go!</p>
+  <h1>🌀 Design Gallery</h1>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="../projects/pixel%20art%20doodle.png" alt="Pixel Art Doodle">
+      <div class="caption">🎨 Pixel Art Doodle</div>
     </div>
-    <div class="page" id="page2" style="z-index: 2; transform: rotateY(-180deg);">
-      <h2>🌈 Meme #1</h2>
-      <img src="https://i.imgur.com/Wo7iGmK.jpeg" alt="Funny meme">
+    <div class="gallery-item">
+      <img src="../projects/pixel%20frames.png" alt="Pixel Frames">
+      <div class="caption">🌆 Pixel Scenery</div>
     </div>
-    <div class="page" id="page3" style="z-index: 1; transform: rotateY(-180deg);">
-      <h2>🎨 Pixel Art Doodle</h2>
-      <img src="assets/pixel.png" alt="Pixel art piece">
+    <div class="gallery-item">
+      <img src="../projects/fake%20id.png" alt="Fake ID">
+      <div class="caption">🪪 Fake ID Concept</div>
     </div>
-    <div class="controls">
-      <button onclick="flipBackward()">← Back</button>
-      <button onclick="flipForward()">Next →</button>
+    <div class="gallery-item">
+      <img src="../projects/chico%20pix.png" alt="Chico Pixel Art">
+      <div class="caption">🐶 My Son</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../projects/magazine%20cover.png" alt="Magazine Cover">
+      <div class="caption">📰 Magazine Cover</div>
     </div>
   </div>
-
-  <script>
-    let currentPage = 1;
-    const totalPages = 3;
-
-    function flipForward() {
-      if (currentPage < totalPages) {
-        const page = document.getElementById(`page${currentPage}`);
-        page.style.transform = 'rotateY(-180deg)';
-        currentPage++;
-      }
-    }
-
-    function flipBackward() {
-      if (currentPage > 1) {
-        currentPage--;
-        const page = document.getElementById(`page${currentPage}`);
-        page.style.transform = 'rotateY(0deg)';
-      }
-    }
-  </script>
 </body>
 </html>
