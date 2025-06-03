@@ -45,12 +45,6 @@
       width: 100%;
       height: auto;
       display: block;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .gallery-item.enlarged img {
-      transform: scale(2);
-      box-shadow: 0 0 20px #0ff;
-      z-index: 1000;
     }
     .caption {
       padding: 10px;
@@ -58,61 +52,82 @@
       font-weight: bold;
       color: #0ff;
     }
+
+    /* Lightbox Styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #0ff;
+    }
+    .lightbox-close {
+      position: fixed;
+      top: 30px;
+      right: 40px;
+      font-size: 30px;
+      color: #0ff;
+      cursor: pointer;
+      z-index: 10000;
+    }
   </style>
 </head>
 <body>
   <h1>🌀 Design Gallery</h1>
   <div class="gallery">
-    <div class="gallery-item">
-      <img src="../projects/pixel%20art%20doodle.png" alt="Pixel Art Doodle">
-      <div class="caption">🎨 Pixel Art Doodle</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../projects/pixel%20frames.png" alt="Pixel Frames">
-      <div class="caption">🌆 Pixel Scenery</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../projects/fake%20id.png" alt="Fake ID">
-      <div class="caption">🪪 Fake ID Concept</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../projects/chico%20pix.png" alt="Chico Pixel Art">
-      <div class="caption">🐶 My Son</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../projects/magazine%20cover.png" alt="Magazine Cover">
-      <div class="caption">📰 Magazine Cover</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../projects/websits%201.png" alt="Website 1">
-      <div class="caption">🌐 Website Concept 1</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../projects/pixel%20.png" alt="Pixel Piece">
-      <div class="caption">🧩 Pixel Piece</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../projects/anayltcs.png" alt="Analytics">
-      <div class="caption">📊 Social Analytics</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../projects/website%202.png" alt="Website 2">
-      <div class="caption">🖥️ Website Concept 2</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../projects/website%204.png" alt="Website 4">
-      <div class="caption">🧠 Website Concept 4</div>
-    </div>
-    <div class="gallery-item">
-      <img src="../projects/furries.png" alt="Furries">
-      <div class="caption">🐾 Furry Project</div>
-    </div>
+    <div class="gallery-item"><img src="../projects/pixel%20art%20doodle.png" alt="Pixel Art Doodle"><div class="caption">🎨 Pixel Art Doodle</div></div>
+    <div class="gallery-item"><img src="../projects/pixel%20frames.png" alt="Pixel Frames"><div class="caption">🌆 Pixel Scenery</div></div>
+    <div class="gallery-item"><img src="../projects/fake%20id.png" alt="Fake ID"><div class="caption">🪪 Fake ID Concept</div></div>
+    <div class="gallery-item"><img src="../projects/chico%20pix.png" alt="Chico Pixel Art"><div class="caption">🐶 My Son</div></div>
+    <div class="gallery-item"><img src="../projects/magazine%20cover.png" alt="Magazine Cover"><div class="caption">📰 Magazine Cover</div></div>
+    <div class="gallery-item"><img src="../projects/websits%201.png" alt="Website 1"><div class="caption">🌐 Website Concept 1</div></div>
+    <div class="gallery-item"><img src="../projects/pixel%20.png" alt="Pixel Piece"><div class="caption">🧩 Pixel Piece</div></div>
+    <div class="gallery-item"><img src="../projects/anayltcs.png" alt="Analytics"><div class="caption">📊 Social Analytics</div></div>
+    <div class="gallery-item"><img src="../projects/website%202.png" alt="Website 2"><div class="caption">🖥️ Website Concept 2</div></div>
+    <div class="gallery-item"><img src="../projects/website%204.png" alt="Website 4"><div class="caption">🧠 Website Concept 4</div></div>
+    <div class="gallery-item"><img src="../projects/furries.png" alt="Furries"><div class="caption">🐾 Furry Project</div></div>
   </div>
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+    <img src="" alt="Expanded Art" id="lightbox-img">
+  </div>
+
   <script>
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      item.addEventListener('click', () => {
-        item.classList.toggle('enlarged');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('visible');
       });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('visible');
+    }
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target !== lightboxImg) closeLightbox();
     });
   </script>
 </body>
