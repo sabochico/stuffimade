@@ -97,7 +97,7 @@
 </head>
 <body>
   <h1>🌀 Design Gallery</h1>
-  <div class="gallery">
+  <div class="gallery" id="gallery">
     <div class="gallery-item"><img src="../projects/fake%20id.png" alt="Fake ID"><div class="caption">🪪 Fake ID Concept</div></div>
     <div class="gallery-item"><img src="../projects/chico%20pix.png" alt="Chico Pixel Art"><div class="caption">🐶 My Son</div></div>
     <div class="gallery-item"><img src="../projects/websits%201.png" alt="Website 1"><div class="caption">🌐 Website Concept 1</div></div>
@@ -116,20 +116,37 @@
   <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const galleryItems = Array.from(document.querySelectorAll('.gallery-item img'));
+    let currentIndex = -1;
 
-    document.querySelectorAll('.gallery-item img').forEach(img => {
+    galleryItems.forEach((img, index) => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightbox.classList.add('visible');
+        currentIndex = index;
       });
     });
 
     function closeLightbox() {
       lightbox.classList.remove('visible');
+      currentIndex = -1;
     }
 
     lightbox.addEventListener('click', (e) => {
       if (e.target !== lightboxImg) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('visible')) return;
+      if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        lightboxImg.src = galleryItems[currentIndex].src;
+      } else if (e.key === 'ArrowLeft') {
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        lightboxImg.src = galleryItems[currentIndex].src;
+      } else if (e.key === 'Escape') {
+        closeLightbox();
+      }
     });
   </script>
 </body>
