@@ -37,13 +37,18 @@
       box-shadow: 0 0 10px #0ff7;
       cursor: pointer;
       transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     .gallery-item:hover {
       transform: scale(1.05);
     }
     .gallery-item img {
       width: 100%;
-      height: auto;
+      height: 250px;
+      object-fit: cover;
       display: block;
     }
     .caption {
@@ -95,7 +100,6 @@
   <div class="gallery">
     <div class="gallery-item"><img src="../projects/fake%20id.png" alt="Fake ID"><div class="caption">🪪 Fake ID Concept</div></div>
     <div class="gallery-item"><img src="../projects/chico%20pix.png" alt="Chico Pixel Art"><div class="caption">🐶 My Son</div></div>
-    <div class="gallery-item"><img src="../projects/magazine%20cover.png" alt="Magazine Cover"><div class="caption">📰 Magazine Cover</div></div>
     <div class="gallery-item"><img src="../projects/websits%201.png" alt="Website 1"><div class="caption">🌐 Website Concept 1</div></div>
     <div class="gallery-item"><img src="../projects/pixel%20.png" alt="Pixel Piece"><div class="caption">🧩 Pixel Piece</div></div>
     <div class="gallery-item"><img src="../projects/anayltcs.png" alt="Analytics"><div class="caption">📊 Social Analytics</div></div>
