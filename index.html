@@ -3,80 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>J (Jiyay) — Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <title>J — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      background: #0f0f0f;
-      font-family: 'Orbitron', sans-serif;
-      color: #fff;
+    :root {
+      --neon: #0ff;
+      --bg: #0a0a0a;
+      --fg: #ffffff;
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+    }
+
     header {
-      position: relative;
       height: 100vh;
-      background: radial-gradient(circle at center, #1a1a1a 0%, #0f0f0f 100%);
+      width: 100%;
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      background: radial-gradient(ellipse at center, #141414 0%, #0a0a0a 100%);
     }
-    .bg-gif-container {
+
+    .bg-gif {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 350px;
-      height: 350px;
       transform: translate(-50%, -50%);
-      opacity: 0.3;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 0 60px #0ff;
+      width: 260px;
+      height: auto;
+      opacity: 0.45;
       z-index: 1;
+      border-radius: 12px;
+      box-shadow: 0 0 30px var(--neon);
     }
-    .bg-gif-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .name-stack {
+
+    .main-logo {
       z-index: 2;
-      font-size: 10em;
+      font-size: 9rem;
       font-weight: 700;
-      letter-spacing: 8px;
-      text-shadow: 0 0 25px #0ff, 0 0 50px #0ff;
+      letter-spacing: 12px;
+      text-shadow: 0 0 15px var(--neon), 0 0 40px var(--neon);
+      color: var(--neon);
     }
-    .social-icons {
+
+    .socials {
       z-index: 2;
       margin-top: 40px;
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 24px;
       justify-content: center;
     }
-    .social-icons a {
-      width: 45px;
-      height: 45px;
-      transition: transform 0.3s ease, filter 0.3s ease;
+
+    .socials a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      transition: transform 0.2s ease, filter 0.2s ease;
     }
-    .social-icons a:hover {
-      transform: scale(1.3);
-      filter: drop-shadow(0 0 10px #0ff);
+
+    .socials a:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 8px var(--neon));
     }
-    .social-icons img {
+
+    .socials img {
       width: 100%;
       height: auto;
+    }
+
+    @media (max-width: 600px) {
+      .main-logo {
+        font-size: 5rem;
+        letter-spacing: 6px;
+      }
+
+      .bg-gif {
+        width: 200px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="bg-gif-container">
-      <img src="slowed_naruto.gif" alt="Naruto GIF">
-    </div>
-    <div class="name-stack">J</div>
-    <div class="social-icons">
+    <img src="slowed_naruto.gif" alt="Naruto GIF" class="bg-gif">
+    <div class="main-logo">J</div>
+    <div class="socials">
       <a href="https://youtube.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
       <a href="https://kick.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Kick.com_logo.svg/512px-Kick.com_logo.svg.png" alt="Kick"></a>
       <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
