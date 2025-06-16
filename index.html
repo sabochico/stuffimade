@@ -3,52 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>J — Portfolio</title>
+  <title>J — Social Links</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       background: #0a0a0a;
       font-family: 'Orbitron', sans-serif;
-      color: #fff;
-      overflow: hidden;
-    }
-    header {
-      position: relative;
-      height: 100vh;
+      color: #0ff;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
     }
     .bg-gif {
       position: absolute;
       top: 50%;
       left: 50%;
       width: 300px;
-      transform: translate(-50%, -50%);
       opacity: 0.35;
-      border-radius: 16px;
-      mix-blend-mode: screen;
-      pointer-events: none;
+      transform: translate(-50%, -50%);
+      border-radius: 12px;
+      box-shadow: 0 0 30px #0ff;
       z-index: 1;
+      pointer-events: none;
     }
     .logo {
       font-size: 10rem;
-      color: #0ff;
       text-shadow: 0 0 20px #0ff, 0 0 60px #0ff;
       z-index: 2;
     }
     .socials {
-      display: flex;
-      gap: 30px;
-      margin-top: 40px;
       z-index: 2;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
     }
     .socials a {
-      width: 40px;
-      height: 40px;
-      display: inline-block;
+      width: 45px;
       transition: transform 0.2s, filter 0.2s;
     }
     .socials a:hover {
@@ -62,20 +58,18 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="slowed_naruto.gif" alt="Naruto GIF" class="bg-gif">
-    <div class="logo">J</div>
-    <div class="socials">
-      <a href="https://youtube.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
-      <a href="https://kick.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Kick.com_logo.svg/512px-Kick.com_logo.svg.png" alt="Kick"></a>
-      <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-      <a href="https://tiktok.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"></a>
-      <a href="https://discord.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord"></a>
-      <a href="https://ko-fi.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968569.png" alt="Ko-Fi"></a>
-      <a href="https://paypal.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/888/888870.png" alt="PayPal"></a>
-      <a href="https://amazon.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Amazon"></a>
-      <a href="https://twitch.tv" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733641.png" alt="Twitch"></a>
-    </div>
-  </header>
+  <img src="slowed_naruto.gif" alt="Naruto GIF" class="bg-gif">
+  <div class="logo">J</div>
+  <div class="socials">
+    <a href="https://youtube.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+    <a href="https://kick.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Kick.com_logo.svg/512px-Kick.com_logo.svg.png" alt="Kick"></a>
+    <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+    <a href="https://tiktok.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"></a>
+    <a href="https://discord.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord"></a>
+    <a href="https://ko-fi.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968569.png" alt="Ko-Fi"></a>
+    <a href="https://paypal.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/888/888870.png" alt="PayPal"></a>
+    <a href="https://amazon.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Amazon"></a>
+    <a href="https://twitch.tv" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733641.png" alt="Twitch"></a>
+  </div>
 </body>
 </html>
