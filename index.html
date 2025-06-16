@@ -31,41 +31,43 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 300px;
-      height: 300px;
+      width: 600px;
+      height: auto;
       transform: translate(-50%, -50%);
-      opacity: 0.2;
+      opacity: 0.05;
       z-index: 1;
       pointer-events: none;
     }
     .name-stack {
-      font-size: 8em;
+      font-size: 10em;
       font-weight: 700;
-      line-height: 1;
       letter-spacing: 8px;
       z-index: 2;
     }
     .glow {
-      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+      text-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
       animation: pulse 2s infinite ease-in-out;
     }
     @keyframes pulse {
-      0%, 100% { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; }
-      50% { text-shadow: 0 0 15px #0ff, 0 0 30px #0ff; }
+      0%, 100% { text-shadow: 0 0 15px #0ff, 0 0 30px #0ff; }
+      50% { text-shadow: 0 0 25px #0ff, 0 0 45px #0ff; }
     }
     .social-icons {
-      margin-top: 40px;
+      margin-top: 30px;
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
       justify-content: center;
       z-index: 2;
     }
     .social-icons a {
-      display: inline-block;
-      width: 48px;
-      height: 48px;
-      filter: drop-shadow(0 0 6px #0ff);
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.3);
+      filter: drop-shadow(0 0 8px #0ff);
     }
     .social-icons img {
       width: 100%;
@@ -80,15 +82,15 @@
       <div class="glow">J</div>
     </div>
     <div class="social-icons">
+      <a href="https://youtube.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+      <a href="https://kick.com" target="_blank"><img src="https://seeklogo.com/images/K/kick-streaming-logo-5F8A9CFE6F-seeklogo.com.png" alt="Kick"></a>
       <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
       <a href="https://tiktok.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"></a>
-      <a href="https://twitter.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X"></a>
-      <a href="https://threads.net" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" alt="Threads"></a>
-      <a href="https://youtube.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
-      <a href="https://twitch.tv" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733641.png" alt="Twitch"></a>
-      <a href="https://amazon.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Amazon"></a>
-      <a href="https://ko-fi.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968569.png" alt="Ko-Fi"></a>
       <a href="https://discord.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord"></a>
+      <a href="https://ko-fi.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968569.png" alt="Ko-Fi"></a>
+      <a href="https://paypal.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="PayPal"></a>
+      <a href="https://amazon.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Amazon"></a>
+      <a href="https://twitch.tv" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733641.png" alt="Twitch"></a>
     </div>
   </header>
 </body>
