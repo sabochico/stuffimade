@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jay (Jiyay) — Portfolio</title>
+  <title>J (Jiyay) — Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     html {
@@ -17,6 +17,7 @@
       overflow-x: hidden;
     }
     header {
+      position: relative;
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -24,12 +25,25 @@
       align-items: center;
       text-align: center;
       background: linear-gradient(120deg, #121212, #1f1f1f);
+      overflow: hidden;
+    }
+    .bg-gif {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      transform: translate(-50%, -50%);
+      opacity: 0.2;
+      z-index: 1;
+      pointer-events: none;
     }
     .name-stack {
-      font-size: 5em;
+      font-size: 8em;
       font-weight: 700;
-      line-height: 0.8;
+      line-height: 1;
       letter-spacing: 8px;
+      z-index: 2;
     }
     .glow {
       text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
@@ -40,11 +54,12 @@
       50% { text-shadow: 0 0 15px #0ff, 0 0 30px #0ff; }
     }
     .social-icons {
-      margin-top: 60px;
+      margin-top: 40px;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
+      z-index: 2;
     }
     .social-icons a {
       display: inline-block;
@@ -60,11 +75,10 @@
 </head>
 <body>
   <header>
+    <img src="https://media.giphy.com/media/xUOxf48t5upXQe6Q5G/giphy.gif" alt="Naruto" class="bg-gif">
     <div class="name-stack">
-      <div class="glow">JAY</div>
-      <div class="glow">JAY</div>
+      <div class="glow">J</div>
     </div>
-    <p style="color: #0ff; font-size: 1.2em;">I like to make things.</p>
     <div class="social-icons">
       <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
       <a href="https://tiktok.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046125.png" alt="TikTok"></a>
